@@ -1,0 +1,274 @@
+body{
+    background: black;
+    background-image: url("../pictures/BackGroung.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /*масштабирование*/
+    height: 100%;
+    max-width: 100%;
+    font-family: 'Merriweather', serif;    
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+
+.logo {
+    background: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.graphiclogo {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/*..................................
+               MENU
+..................................*/
+#menu {
+    width: 100%;
+/*фон маркеров при наведении мыши*/
+ background: #c9c9c9; /* Old browsers */
+ background: -moz-linear-gradient(top,  #c9c9c9 0%, #f6f6f6 2%, #c4c5c7 98%, #757577 100%); /* FF3.6-15 */
+ background: -webkit-linear-gradient(top,  #c9c9c9 0%,#f6f6f6 2%,#c4c5c7 98%,#757577 100%); /* Chrome10-25,Safari5.1-6 */
+ background: linear-gradient(to bottom,  #c9c9c9 0%,#f6f6f6 2%,#c4c5c7 98%,#757577 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9c9c9', endColorstr='#757577',GradientType=0 ); 
+/*фон маркеров*/
+    display: table;
+}
+
+#menu li {
+    display: block;
+    float: left;
+    position: relative;
+}
+
+#menu li a {
+    display: table;
+    padding: 0 110px 0 60px;
+    height: 50px;
+    text-align: left;
+    font-family: sans-serif;
+    line-height: 49px;
+    color: black;
+    text-decoration: none; /*убрать маркеры*/
+    transition: .5s; /*плавность перехода*/
+}
+
+.sub-menu {
+    visibility: hidden; /*скрыть*/
+    opacity: 0;
+    position: absolute;
+    z-index: -1; /*на задний план*/
+    transition: .3s;
+}
+
+#menu .sub-menu li{
+    float: none;
+}
+
+#menu .sub-menu li a {
+    width: 100%;
+    min-width: 100%;
+    padding: 0 11px;
+    white-space: nowrap; /*не разибвать текст на 2 строки*/
+    text-align: left;
+    box-shadow: none; /*убрать тень*/
+    
+}
+
+#menu li:hover a{
+/*фон маркеров при отведении мыши*/ 
+ background: #e0e1e5; /* Old browsers */
+ background: -moz-linear-gradient(top,  #e0e1e5 0%, #454547 2%, #454547 98%, #e0e1e5 100%); /* FF3.6-15 */
+ background: -webkit-linear-gradient(top,  #e0e1e5 0%,#454547 2%,#454547 98%,#e0e1e5 100%); /* Chrome10-25,Safari5.1-6 */
+ background: linear-gradient(to bottom,  #e0e1e5 0%,#454547 2%,#454547 98%,#e0e1e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e1e5', endColorstr='#e0e1e5',GradientType=0 ); 
+/*фон маркеров*/  
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3) insert; /*внутренняя тень*/
+    color: white;
+    
+}
+
+#menu li:hover .sub-menu a{
+    background: #eee;
+    color: #666;
+    height: 40px;
+    line-height: 40px;
+}
+
+#menu li a:hover + .sub-menu,
+.sub-menu:hover{
+    display: block;
+}
+
+#menu li:hover .sub-menu a:hover{
+    color: black;
+}
+
+#menu li:hover > ul{
+    visibility: visible;
+    opacity: 1; /*убрать прозрачность*/
+    z-index: 1; /*выпадающее меню на передний план*/
+}
+
+/*медиа-запрос на ширину браузера*/
+@media screen and (max-width: 1350px) {
+    .sub-menu {
+        position: relative;
+        display: none;
+    }
+    
+    #menu li, 
+    #menu li a{
+        width: 100%;
+        border: none;
+        padding-right: 0;
+    }
+    
+    #menu li{
+        border-bottom: 1px solid #555;
+    }
+    
+    .sub-menu li{
+    border-bottom: 1px solid #ddd;
+    }
+        
+    #menu{
+        width: 100%;
+            overflow: hidden; /*скрыть все, что выходит за рамки*/
+    }    
+}
+
+.container {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+.row:after {
+    clear: both;
+    content: "";
+    display: table;
+    max-width: 100%;
+}
+
+.col-3 {
+    width: 263px;
+    margin-right: 80px;
+    float: left;
+}
+
+.col-3:last-child {
+    margin-right: 0px;
+}
+
+/*FOOTER*/
+.footer {
+    background-color: black;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.footer p{
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+p.footername {
+    font-size: 28px;
+    margin-bottom: 10px;
+    line-height: normal;
+    font-family: 'Merriweather', serif;
+}
+
+p.footersocial {
+    color: white;
+}
+
+p.footersocialicons {
+    color: white;
+    font-size: 40px;
+}
+
+p.footersocialicons a {
+    color: white;
+    margin-right: 10px
+}
+
+p.footersocialicons a:last-child {
+    margin-right: 0px;
+}
+
+p.footersocialicons a:hover {
+    color: darksalmon;
+} 
+
+.button {
+    font-weight: 700px;
+    display: inline-block;
+
+    font-family: 'Merriweather', serif;
+
+    font-size: 20px;
+}
+
+
+
+/* ........................TEAM........................ */
+.table_col {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 14px;
+  width: 660px;
+  background: white;
+  text-align: left;
+  border-collapse: collapse;
+  color: #3E4347;
+  margin: auto;
+  max-height: 100%;
+}
+.table_col th:first-child, .table_col td:first-child {
+color: #F5F6F6;
+border-left: none;
+}
+.table_col th {
+font-weight: normal;
+border-bottom: 2px solid #F5E1A6;
+border-right: 20px solid white;
+border-left: 20px solid white;
+padding: 8px 10px;
+}
+.table_col td {
+border-right: 20px solid white;
+border-left: 20px solid white;
+padding: 12px 10px;
+color: #8b8e91;
+}
+
+.name-td alLeft bordR{
+    color: black;
+}
+
+
+.sort:firct-child {
+    color: black;
+}
